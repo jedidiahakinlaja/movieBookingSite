@@ -7,6 +7,7 @@ import NearbyEvent from "./pages/nearbyEvent";
 import UpcomingEvent from "./pages/upcomingEvent";
 import Header from "./pages/header";
 import Detailpage from "./pages/detailpaage";
+import BookingPage from "./pages/bookingpage";
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
             <Route path="/nearbyevent" element={<NearbyEvent />} />
             <Route path="/upcomingevent" element={< UpcomingEvent />} />
             <Route path="/detailpage" element={<Detailpage/>}/>
+            <Route path="/bookingpage" element={<BookingPage/>}/>
           </Routes>
       </BrowserRouter>
     </div>

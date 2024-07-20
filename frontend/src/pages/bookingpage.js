@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import '../styles/detailpage.css';
 import axios from "axios";
 import queryString from "query-string";
-import { useNavigate } from 'react-router-dom'
 
-function Detailpage() {
-        const navigate = useNavigate()
+function BookingPage() {
        const q = queryString.parse(window.location.search);
         const {movies} =q;
         console.log(movies);
@@ -24,9 +22,6 @@ function Detailpage() {
     
      }
 
-     function selectBooking (ss) {
-        navigate(`/bookingpage?movies=${ss}`, {replace: true})
-}
 
     useEffect(() => {
        getIndividualDetail();
@@ -38,14 +33,14 @@ function Detailpage() {
                 <div className='row'>
                     <div className='col-md-12 details position-absolute top-50 start-50 translate-middle'>
                         <h2>Title:{movie.name} </h2>
-                            <img src={movie.imageUrl} className='side-img' alt='not found yet' ></img>
+                            <img src={movie.qr} className='side-img' alt='not found yet' ></img>
                                 {console.log(movie)}
                         <div className='side-div'>
                             <p>Movie Name: {movie.name} </p>
                             <p>Rating: {movie.rate} </p>
                         </div>
                         <div className='booknow'>
-                           <button class='btn btn-primary' onClick={() => selectBooking(movie._id)}>NEXT</button>
+                           <button class='btn btn-primary'>Book Now</button>
                         </div>
                     </div>
 
@@ -55,4 +50,4 @@ function Detailpage() {
     )
 }
 
-export default Detailpage
+export default BookingPage

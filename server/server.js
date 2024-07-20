@@ -26,8 +26,8 @@ app.set("view engine", "ejs") //choosing ejs template
 app.use('/', route);
 mongoose.set('strictQuery',false);
 
-// const MongoAtlas = process.env.MONGO_URL;
-const MongoAtlas= "mongodb+srv://jedidiahAkinlaja:jedidiahAkinlaja@cluster0.wfy398f.mongodb.net/ReactBookingSite?retryWrites=true&w=majority&appName=Cluster0"
+const MongoAtlas = process.env.MONGO_URL;
+
 // app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 mongoose.connect(MongoAtlas, {

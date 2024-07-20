@@ -6,6 +6,7 @@
         "rate": 2.5,
         "type": "Horror Thriller",
         "price":1200,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"
@@ -19,6 +20,7 @@
         "type": "Animated",
         "rate": 4,
         "price":2500,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"
@@ -32,6 +34,7 @@
         "type": "Actione",
         "rate": 2,
         "price":3000,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"
@@ -45,6 +48,7 @@
         "rate": 4.5,
         "type": "Action Adventure Fantasy",
         "price":3000,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"
@@ -58,6 +62,7 @@
         "rate": 4.5,
         "type": "Action Adventure Fantasy",
         "price":3000,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"
@@ -71,6 +76,7 @@
         "type": "Action Crime Thriller",
         "rate": 3.2,
         "price":2500,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"
@@ -84,6 +90,7 @@
         "type": "Adventure Animation Family",
         "rate": 5,
         "price":3500,
+        "qr":"https://i.ibb.co/wh8b8sN/qr1.png",
         "timing":{
             "option1": "01-07-22 12:00pm",
             "option2": "02-07-22 10:00am"

@@ -23,6 +23,9 @@ const MoviesSchema = new Schema({
     },
     imageUrl:{
         type:String
+    },
+    qr:{
+        type:String
     }
 
 })
