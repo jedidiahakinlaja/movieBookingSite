@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "name": "Mission Impossible",
+        "language": "English",
+        "rate": 2.5,
+        "type": "Horror Thriller",
+        "price":1200,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "https://pre00.deviantart.net/5d3b/th/pre/f/2017/313/2/b/mission_impossible__dark_directive_teaser_poster_by_themadbutcher-dbt9wav.png"
+    },
+    {
+        "id": 2,
+        "name": "Incredibles 2",
+        "language": "ENGLISH",
+        "type": "Animated",
+        "rate": 4,
+        "price":2500,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "http://static1.squarespace.com/static/588a4776f5e23132a09d23b2/588a4e91be65945e50a36c0e/5b24084baa4a999c88a9f277/1529088827756/tre.jpg"
+    },
+    {
+        "id":3,
+        "name": "Avengers",
+        "language": "ENGLISH",
+        "type": "Actione",
+        "rate": 2,
+        "price":3000,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/04/01/Pictures/_46a0b2c0-3590-11e8-8c5f-3c6cc031651e.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Black Friday",
+        "language": "ENGLISH",
+        "rate": 4.5,
+        "type": "Action Adventure Fantasy",
+        "price":3000,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "https://image.ibb.co/f0hhZc/bp.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Black Panther",
+        "language": "ENGLISH",
+        "rate": 4.5,
+        "type": "Action Adventure Fantasy",
+        "price":3000,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "https://image.ibb.co/f0hhZc/bp.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Death Wish",
+        "language": "ENGLISH",
+        "type": "Action Crime Thriller",
+        "rate": 3.2,
+        "price":2500,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "https://image.ibb.co/gC9PfH/dw.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Coco",
+        "language": "ENGLISH",
+        "type": "Adventure Animation Family",
+        "rate": 5,
+        "price":3500,
+        "timing":{
+            "option1": "01-07-22 12:00pm",
+            "option2": "02-07-22 10:00am"
+    },
+        "imageUrl": "https://image.ibb.co/dQwWSx/coco.jpg"
+    }
+
+]

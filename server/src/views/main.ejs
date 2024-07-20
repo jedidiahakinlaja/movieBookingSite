@@ -1,0 +1,16 @@
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="background">
+        <% outputs.forEach(output=> { %>
+            <div>
+                Name:<%= output.name %>,<br>
+                Language: <%= output.language %>,<br>
+                Rate: <%= output.rate %>,<br>
+                Type: <%= output.type %> <br>
+            </div>
+            <% }); %>
+        </div>
+</body>
