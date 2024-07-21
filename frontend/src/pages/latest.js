@@ -19,6 +19,8 @@ function Latest() {
      function handleVideo(){        
         
      }
+
+     
     useEffect(() => {
         getLastestEvent();
     }, [])
