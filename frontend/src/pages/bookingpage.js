@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import '../styles/detailpage.css';
 import axios from "axios";
 import queryString from "query-string";
+import { useNavigate } from 'react-router-dom'
 
 function BookingPage() {
+    const navigate = useNavigate()
        const q = queryString.parse(window.location.search);
         const {movies} =q;
         console.log(movies);
@@ -12,11 +14,12 @@ function BookingPage() {
         const [time,setTime]=useState([])
         const [handTime, setHandleTime]=useState([])
         const [handSeat, setHandSeat]=useState([])
+
     const getIndividualDetail = async () => {
         
         
         axios({
-            url: `http://localhost:5500/movies/${movies}`,
+            url: `http://localhost:5500/movie/${movies}`,
             method: 'get',
             headers: { 'Content-Type': 'application/JSON' }
         })
@@ -33,7 +36,7 @@ function BookingPage() {
         
         
         axios({
-            url: `http://localhost:5500/movies/${movies}`,
+            url: `http://localhost:5500/movie/${movies}`,
             method: 'get',
             headers: { 'Content-Type': 'application/JSON' }
         })
@@ -57,25 +60,34 @@ function BookingPage() {
 
 
        const postDetails= async()=>{
-            const calprice = movie.price * handSeat
-        const filterObj = {
-          sendId:movie._id,
-          timeChosen:handTime,
-          QR:movie.qr,
-          TotalPrice:calprice
+           const calprice = movie.price * handSeat
+           const filterObj = {
+           sendId:movie._id,
+           timeChosen:handTime,
+           QR:movie.qr,
+           totalPrice:calprice,
+           title:movie.name,
+           img:movie.imageUrl
         }
-        console.log(filterObj);
+        // console.log(filterObj);
 
-        // axios({
-        //     url: `http://localhost:5500/filter`,
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/JSON'},
-        //     data: filterObj
-        // })
-        // .then( res => {
-        //     console.log(res);
-        // })
-        // .catch((err => console.log(err)))
+       await axios({
+            url: `http://localhost:5500/postDetails`,
+            method: 'POST',
+            headers: { 'Content-Type': 'application/JSON'},
+            data: filterObj
+        })
+        .then( res => { navigate(`/finalpage?movies=${res.data.Details._id}`, {replace: true})
+               
+
+        }
+
+       )
+        .catch((err => console.log(err)))
+
+
+    
+        
      }
 
       function getCurYear ()  {
@@ -100,18 +112,19 @@ function BookingPage() {
                             <img src={movie.qr} className='side-img' alt='not found yet' ></img>
                                 {console.log(movie)}
                         <div className='side-div'>
-                            <p>Movie Name: {movie.name} </p>
-                            <p>Date: {time} </p>
-                            <p>Price:{movie.price}</p>
+                            <h4>Movie Name: {movie.name} </h4> <br/>
+                            <h5>Date: {time} </h5> <br/>
+                            <h5>Price:{movie.price}</h5><br/>
                             <label>Available Show Timing:</label><br/>
 
                             {tim.map((data, idx) => {
                             return<>
-                                <input type="radio" name="timing" id="tim1" onChange={handleTimimg}  value={data.option1}/> <label id="tim1">{data.option1}</label><br/>
-                                <input type="radio" name="timing" id="tim2" onChange={handleTimimg}  value={data.option2}/> <label id="tim2">{data.option2}</label><br/>
+                                <input type="radio" name="timing" id="tim1" onChange={handleTimimg}  value={data.option1}/> <label id="tim1">{data.option1}</label><br/><br/>
+                                <input type="radio" name="timing" id="tim2" onChange={handleTimimg}  value={data.option2}/> <label id="tim2">{data.option2}</label><br/><br/>
                             </>
                         })}
-                                <input type="number" placeholder="number of seats" onChange={handleSeat}></input>
+                              <label/>Number of Seats: <br/>
+                              <input type="number" placeholder="number of seats" onChange={handleSeat}></input>
                         </div>
                         <div className='booknow'>
                            <button class='btn btn-primary'

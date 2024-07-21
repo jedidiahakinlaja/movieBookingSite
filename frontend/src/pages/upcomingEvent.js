@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './style.css';
-function UpcomingEvent() {
+import { useNavigate } from 'react-router-dom'
 
+function UpcomingEvent() {
+  const navigate = useNavigate()
   const [upcoming, setUpcoming] = useState([])
 
   const getUpComingEvent = async () => {
@@ -17,9 +19,11 @@ function UpcomingEvent() {
 
    }
 
-   function handleVideo(){
-      
-   }
+   function selectBooking (ss) {
+    navigate(`/viewpage?movies=${ss}`, {replace: true})
+}
+
+
   useEffect(() => {
     getUpComingEvent();
   }, [])
@@ -40,7 +44,7 @@ function UpcomingEvent() {
                                     <div class="card-body">
                                             <h5 class="card-text">Name: {data.name}</h5>
                                             <p class="card-text">Rating: {data.rate}</p>
-                                            <button href="#" class="btn btn-primary"  onClick={() => handleVideo(data.id)}>Book</button>
+                                            <button href="#" class="btn btn-primary" onClick={() => selectBooking(data._id)}>View</button>
                                     </div>
                             </div>
                             </>

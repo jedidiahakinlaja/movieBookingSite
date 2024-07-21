@@ -8,6 +8,8 @@ import UpcomingEvent from "./pages/upcomingEvent";
 import Header from "./pages/header";
 import Detailpage from "./pages/detailpaage";
 import BookingPage from "./pages/bookingpage";
+import Finalpage from "./pages/finalpage";
+import Viewpage from "./pages/viewpage";
 function App() {
   return (
     <div className="App">
@@ -20,6 +22,8 @@ function App() {
             <Route path="/upcomingevent" element={< UpcomingEvent />} />
             <Route path="/detailpage" element={<Detailpage/>}/>
             <Route path="/bookingpage" element={<BookingPage/>}/>
+            <Route path="/finalpage" element={<Finalpage/>} />
+            <Route path="/viewpage" element={<Viewpage/>}/>
           </Routes>
       </BrowserRouter>
     </div>

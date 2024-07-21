@@ -41,7 +41,7 @@ function Latest() {
                                     <div class="card-body">
                                             <h5 class="card-text">Name: {data.name}</h5>
                                             <p class="card-text">Rating: {data.rate}</p>
-                                            <button href="#" class="btn btn-primary"  onClick={() => handleVideo(data.id)}>Book</button>
+                                            <button href="#" class="btn btn-primary"  onClick={() => handleVideo(data.id)}>view</button>
                                     </div>
                             </div>
                             </>

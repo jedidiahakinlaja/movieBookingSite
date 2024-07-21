@@ -4,37 +4,34 @@ import axios from "axios";
 import queryString from "query-string";
 import { useNavigate } from 'react-router-dom'
 
-function Detailpage() {
-        const navigate = useNavigate()
-       const q = queryString.parse(window.location.search);
-        const {movies} =q;
-        console.log(movies);
-    const [movie, setMovies] = useState([])
-    const getIndividualDetail = async () => {
-        
+function Viewpage() {
+
+      const q = queryString.parse(window.location.search);
+     const {movies} =q;
+      console.log(movies);
+      const [movie, setViewPage] = useState([])
+
+
+      const getViewPage = async () => {
 
         axios({
-            url: `http://localhost:5500/movie/${movies}`,
+            url: `http://localhost:5500/movies/${movies}`,
             method: 'get',
             headers: { 'Content-Type': 'application/JSON' }
         })
-            .then(res => setMovies(res.data.movieId[0]))
+            .then(res => setViewPage(res.data.movieId[0]))
             .catch((err => console.log(err)))
-            
-    
+  
      }
 
-     function selectBooking (ss) {
-        navigate(`/bookingpage?movies=${ss}`, {replace: true})
-}
+     useEffect(()=>{
+        getViewPage()
+     },[])
 
-    useEffect(() => {
-       getIndividualDetail();
-      }, [])
 
-    return (
-        <>
-            <div className='container'>
+  return (
+    <>
+         <div className='container'>
                 <div className='row'>
                     <div className='col-md-12 details position-absolute top-50 start-50 translate-middle'>
                         <h2>Title:{movie.name} </h2>
@@ -48,15 +45,12 @@ function Detailpage() {
                             <h4>Type: {movie.type} </h4><br/>
 
                         </div>
-                        <div className='booknow'>
-                           <button class='btn btn-primary' onClick={() => selectBooking(movie._id)}>NEXT</button>
-                        </div>
                     </div>
 
                 </div>
             </div>
-        </>
-    )
+    </>
+  )
 }
 
-export default Detailpage
+export default Viewpage
