@@ -47,6 +47,7 @@ function BookingPage() {
 
        function handleTimimg (event){
 
+
              setHandleTime(event.target.value);
        }
 
@@ -92,7 +93,7 @@ function BookingPage() {
 
     return (
         <>
-            <div className='container'>
+            <div className='container' style={styles.container}>
                 <div className='row'>
                     <div className='col-md-12 details position-absolute top-50 start-50 translate-middle'>
                         <h2>Title:{movie.name} </h2>
@@ -110,10 +111,14 @@ function BookingPage() {
                                 <input type="radio" name="timing" id="tim2" onChange={handleTimimg}  value={data.option2}/> <label id="tim2">{data.option2}</label><br/>
                             </>
                         })}
-                                <input type="" placeholder="number of seats" onChange={handleSeat}></input>
+                                <input type="number" placeholder="number of seats" onChange={handleSeat}></input>
                         </div>
                         <div className='booknow'>
-                           <button class='btn btn-primary' onClick={()=>postDetails()} >Book Now</button>
+                           <button class='btn btn-primary'
+                            style={handSeat.length === 0
+                                ? styles.disabledButton : styles.enabledButton}
+                            disabled={handSeat.length === 0}
+                            onClick={()=>postDetails()} >Book Now</button>
                         </div>
                     </div>
 
@@ -124,3 +129,26 @@ function BookingPage() {
 }
 
 export default BookingPage
+
+const styles={
+    disabledButton: {
+        backgroundColor: 'gray',
+        color: 'white',
+        cursor: 'not-allowed',
+        margin: 10,
+        padding: 15,
+        borderRadius: "8px",
+        border: "none",
+        boxShadow: "0px 0px 10px 0px grey",
+    },
+    enabledButton: {
+        backgroundColor: 'green',
+        color: 'white',
+        cursor: 'pointer',
+        margin: 10,
+        padding: 15,
+        borderRadius: "8px",
+        border: "none",
+        boxShadow: "0px 0px 10px 0px grey",
+    }
+}
