@@ -9,9 +9,10 @@ function Detailpage() {
        const q = queryString.parse(window.location.search);
         const {movies} =q;
         console.log(movies);
-    const [movie, setMovies] = useState([])
-    const getIndividualDetail = async () => {
-        
+        const [movie, setMovies] = useState([])
+
+
+        const getIndividualDetail = async () => {  
 
         axios({
             url: `http://localhost:5500/movie/${movies}`,
@@ -19,14 +20,17 @@ function Detailpage() {
             headers: { 'Content-Type': 'application/JSON' }
         })
             .then(res => setMovies(res.data.movieId[0]))
+
+            // .then(res=>console.log(res))
             .catch((err => console.log(err)))
             
-    
+                
      }
+
 
      function selectBooking (ss) {
         navigate(`/bookingpage?movies=${ss}`, {replace: true})
-}
+     }
 
     useEffect(() => {
        getIndividualDetail();
@@ -39,7 +43,6 @@ function Detailpage() {
                     <div className='col-md-12 details position-absolute top-50 start-50 translate-middle'>
                         <h2>Title:{movie.name} </h2>
                             <img src={movie.imageUrl} className='side-img' alt='not found yet' ></img>
-                                {console.log(movie)}
                         <div className='side-div'>
                             <h4>Movie Name: {movie.name} </h4>
                             <hr/>
