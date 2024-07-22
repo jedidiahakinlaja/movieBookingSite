@@ -13,7 +13,6 @@ import Viewpage from "./pages/viewpage";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
         <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -25,7 +24,6 @@ function App() {
             <Route path="/finalpage" element={<Finalpage/>} />
             <Route path="/viewpage" element={<Viewpage/>}/>
           </Routes>
-      </BrowserRouter>
     </div>
   );
 }

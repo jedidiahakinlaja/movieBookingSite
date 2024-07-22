@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './style.css';
-function NearbyEvent() {
-
+import { useNavigate } from 'react-router-dom'
+  function NearbyEvent() {
+  const navigate = useNavigate()
   const [event, setEvent] = useState([])
   const getNearByEvent = async () => {
-
+   
     axios({
         url: 'http://localhost:5500/event',
         method: 'get',
@@ -16,9 +17,10 @@ function NearbyEvent() {
 
  }
 
- function handleVideo(){
-    
- }
+ function selectBooking (ss) {
+  navigate(`/viewpage?movies=${ss}`, {replace: true})
+}
+
 useEffect(() => {
   getNearByEvent();
 }, [])
@@ -39,7 +41,7 @@ useEffect(() => {
                                     <div class="card-body">
                                             <h5 class="card-text">Name: {data.name}</h5>
                                             <p class="card-text">Rating: {data.rate}</p>
-                                            <button href="#" class="btn btn-primary"  onClick={() => handleVideo(data.id)}>View</button>
+                                            <button href="#" class="btn btn-primary" onClick={() => selectBooking(data._id)} >View</button>
                                     </div>
                             </div>
                             </>

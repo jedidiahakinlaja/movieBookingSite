@@ -12,16 +12,19 @@ import './style.css';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import { useDispatch, useSelector } from "react-redux";
 import { Navigation } from 'swiper/modules';
-
+import{ setUpComingEvent,setMovies} from '../redux/actions/productAction'
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const  Home = ()=> {
     const navigate = useNavigate()
-    const [upcoming, setUpComingEvent] = useState([])
-    const [movies, setMovies] = useState([])
+    const dispatch = useDispatch();
+
+    let upcoming = useSelector((state) => state.allProducts.products);
+    let movies = useSelector((state) => state.allMovies.movies);
    
+
     const getcomingEvent = async() => {
 
         axios({
@@ -29,7 +32,8 @@ const  Home = ()=> {
             method: 'get',
             headers: { 'Content-Type': 'application/JSON'}
         })
-        .then( res => setUpComingEvent(res.data.recommend))
+   
+        .then (res=> dispatch(setUpComingEvent(res.data.recommend)))
 
         .catch((err => console.log(err)))
         
@@ -41,7 +45,7 @@ const  Home = ()=> {
             method: 'get',
             headers: { 'Content-Type': 'application/JSON'}
         })
-        .then( res => setMovies(res.data.movies))
+        .then( res => dispatch(setMovies(res.data.movies)))
 
         .catch((err => console.log(err)))
         
